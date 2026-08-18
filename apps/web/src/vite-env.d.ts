@@ -19,10 +19,7 @@ interface EdgeEverDesktopBridge {
   copyHtml(html: string, plainText: string): Promise<boolean>;
   setSessionToken(value: string): Promise<{ stored: boolean }>;
   clearSessionToken(): Promise<{ stored: false }>;
-  clearLocalData(): Promise<
-    { scheduled: true }
-    | { scheduled: false; errorCode: DesktopLocalDataResetErrorCode }
-  >;
+  clearLocalData(): Promise<{ scheduled: true }>;
   recordRendererError(details: DesktopRendererErrorDetails): Promise<{ recorded: true }>;
   openRendererIssue(details: DesktopRendererErrorDetails): Promise<{ opened: true }>;
   sidecarStatus(): Promise<{ available: boolean; path: string; scope: string }>;
@@ -39,12 +36,6 @@ interface EdgeEverDesktopBridge {
   onCommand(callback: (command: string) => void): () => void;
   onImportMarkdown(callback: (payload: { name: string; content: string }) => void): () => void;
 }
-
-type DesktopLocalDataResetErrorCode =
-  | "unsafe-data-directory"
-  | "application-bundle-not-found"
-  | "helper-start-failed"
-  | "unexpected";
 
 interface DesktopRendererErrorDetails {
   kind: string;

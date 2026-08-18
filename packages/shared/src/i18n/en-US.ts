@@ -1206,12 +1206,7 @@ export const enUS = {
     warning: "This action cannot be undone. Any notes or changes that have not been synced will be permanently lost.",
     confirm: "Clear local data",
     clearing: "Clearing...",
-    errors: {
-      unsafeDataDirectory: "EdgeEver could not verify that the local data folder is safe to remove. Your data was not changed.",
-      applicationBundleNotFound: "EdgeEver could not identify the installed app needed to restart after clearing. Reinstall EdgeEver in Applications and try again.",
-      helperStartFailed: "EdgeEver could not start the macOS data-clearing helper. Your data was not changed. Restart the app and try again.",
-      unexpected: "An unexpected error occurred before local data could be cleared. Your data was not changed. Restart the app and try again.",
-    },
+    error: "Local data could not be cleared. Please try again.",
   },
   loginDevices: {
     title: "Signed-in devices",
